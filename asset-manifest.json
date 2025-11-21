@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/SHOPZONE---TIENDA-VIRTUAL/static/css/main.e1a0f2f3.css",
+    "main.js": "/SHOPZONE---TIENDA-VIRTUAL/static/js/main.261d1185.js",
+    "static/js/453.a7bc43f1.chunk.js": "/SHOPZONE---TIENDA-VIRTUAL/static/js/453.a7bc43f1.chunk.js",
+    "index.html": "/SHOPZONE---TIENDA-VIRTUAL/index.html",
+    "main.e1a0f2f3.css.map": "/SHOPZONE---TIENDA-VIRTUAL/static/css/main.e1a0f2f3.css.map",
+    "main.261d1185.js.map": "/SHOPZONE---TIENDA-VIRTUAL/static/js/main.261d1185.js.map",
+    "453.a7bc43f1.chunk.js.map": "/SHOPZONE---TIENDA-VIRTUAL/static/js/453.a7bc43f1.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e1a0f2f3.css",
+    "static/js/main.261d1185.js"
+  ]
+}
