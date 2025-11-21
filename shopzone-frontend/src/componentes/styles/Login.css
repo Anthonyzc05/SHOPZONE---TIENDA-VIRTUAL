@@ -1,0 +1,81 @@
+.login-container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background: url("https://picsum.photos/1200/800") no-repeat center center/cover;
+  overflow: hidden;
+}
+
+/* Fondo borroso separado */
+.login-blur-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(6px);
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+/* Caja del login (nítida y por encima del blur) */
+.login-box {
+  position: relative;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 40px;
+  color: #fff;
+  text-align: center;
+  animation: fadeIn 1s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.login-box h2 {
+  margin-bottom: 15px;
+  color: #fff;
+  font-weight: 600;
+}
+
+.login-box input {
+  display: block;
+  width: 250px;
+  margin: 10px auto;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+}
+
+.login-box button {
+  background-color: #ff4081;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  margin-top: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+.login-box button:hover {
+  background-color: #f50057;
+  transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+

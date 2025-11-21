@@ -1,0 +1,340 @@
+.inventario-container {
+  font-family: "Poppins", sans-serif;
+  color: #333;
+  background: linear-gradient(135deg, #f6f9ff, #e6f0ff);
+  min-height: 100vh;
+}
+
+/* ENCABEZADO */
+.inventario-header {
+  background: #0057b7;
+  color: white;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.inventario-header nav button {
+  background: transparent;
+  border: none;
+  color: white;
+  margin: 0 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.inventario-header nav button:hover,
+.inventario-header nav .activo {
+  border-bottom: 2px solid yellow;
+}
+
+/* CONFIGURACIÓN */
+.configuracion {
+  position: relative;
+}
+
+.config-icon {
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.config-icon:hover {
+  transform: rotate(90deg);
+}
+
+.menu-opciones {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background: white;
+  color: #333;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  overflow: hidden;
+  width: 180px;
+  animation: fadeIn 0.3s ease;
+}
+
+.menu-opciones div {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.menu-opciones div:hover {
+  background: #f0f0f0;
+}
+
+/* PRODUCTOS */
+.productos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  padding: 40px;
+}
+
+.producto-card {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.producto-card:hover {
+  transform: scale(1.05);
+}
+
+.producto-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.producto-card h3 {
+  margin: 10px 0 5px;
+}
+
+.producto-card p {
+  color: #0078ff;
+  font-weight: bold;
+}
+
+.producto-card button {
+  background: #0078ff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-bottom: 10px;
+}
+
+.producto-card button:hover {
+  background: #0057b7;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Fondo oscuro */
+.carrito-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+/* Ventana del carrito */
+.carrito-modal {
+  background: white;
+  width: 400px;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+  animation: fadeIn 0.3s ease;
+}
+
+/* Animación suave */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.carrito-lista {
+  max-height: 250px;
+  overflow-y: auto;
+  margin-top: 10px;
+}
+
+.carrito-item {
+  display: flex;
+  align-items: center;
+  background: #fafafa;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.carrito-item img {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  margin-right: 10px;
+}
+
+.carrito-info h4 {
+  margin: 0;
+}
+
+.carrito-eliminar {
+  margin-left: auto;
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* Total */
+.carrito-total {
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* Botones */
+.carrito-btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  margin-top: 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.carrito-btn.comprar {
+  background: #007bff;
+  color: white;
+}
+
+.carrito-btn.cerrar {
+  background: #dc3545;
+  color: white;
+}
+
+.carrito-vacio {
+  text-align: center;
+  color: #555;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ====== ADMIN OVERLAY ====== */
+.admin-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3000;
+}
+
+/* ====== ADMIN MODAL ====== */
+.admin-modal {
+  background: white;
+  width: 450px;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  animation: aparecer 0.3s ease-out;
+}
+
+@keyframes aparecer {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.admin-modal h2 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.admin-info p {
+  padding: 6px 0;
+}
+
+/* ====== CHAT ==== */
+.admin-chat {
+  background: #f1f1f1;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.admin-textarea {
+  width: 100%;
+  height: 70px;
+  margin-top: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  padding: 8px;
+  outline: none;
+}
+
+.btn-enviar {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  background: #007bff;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+.btn-enviar:hover {
+  background: #005fcc;
+}
+
+.admin-modal .btn-cerrar {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  background: #dc3545;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+.admin-modal .btn-cerrar:hover {
+  background: #b52a37;
+}
