@@ -38,7 +38,7 @@ function Perfil({ onClose }) {
           name="nombre"
           value={form.nombre}
           onChange={handleChange}
-          placeholder="Tu nombre"
+          placeholder="Tu nombre" //se solicita aqui el nombre del usuario que va a ingresar
         />
 
         <label>Dirección</label>
