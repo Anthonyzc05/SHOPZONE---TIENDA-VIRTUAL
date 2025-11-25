@@ -20,7 +20,7 @@ function Perfil({ onClose }) {
   // 🔹 Guardar cambios
   const guardarCambios = () => {
     localStorage.setItem("perfilUsuario", JSON.stringify(form));
-    alert("Datos guardados correctamente ✔");
+    alert("Datos guardados correctamente ✔"); //Datos Guardados Correctamente
   };
 
   // 🔹 Actualizar inputs
@@ -46,7 +46,7 @@ function Perfil({ onClose }) {
           name="direccion"
           value={form.direccion}
           onChange={handleChange}
-          placeholder="Tu dirección"
+          placeholder="Tu dirección" //Se solicitia la direccion 
         />
 
         <label>Teléfono</label>
@@ -54,26 +54,26 @@ function Perfil({ onClose }) {
           name="telefono"
           value={form.telefono}
           onChange={handleChange}
-          placeholder="Tu teléfono"
+          placeholder="Tu teléfono" // se pide su numero telefonico
         />
 
         <label>Email</label>
         <input
-          name="email"
+          name="email" 
           value={form.email}
           onChange={handleChange}
-          placeholder="Tu correo"
+          placeholder="Tu correo" // se le pide su correo 
         />
-
-        <div className="perfil-botones">
-          <button className="btn-guardar" onClick={guardarCambios}>
-            Guardar
-          </button>
+            {/* 🔹 Si el usuario quiere cambiar sus datos, se guardaran aqui*/} 
+        <div className="perfil-botones"> 
+          <button className="btn-guardar" onClick={guardarCambios}> 
+            Guardar 
+          </button>   
 
           {/* 🔹 Botón regresar que sí funciona */}
-          <button className="btn-regresar" onClick={onClose}>
+          <button className="btn-regresar" onClick={onClose}>  
             Regresar
-          </button>
+          </button> 
         </div>
       </div>
     </div>
