@@ -5,8 +5,8 @@ function Perfil({ onClose }) {
   const [form, setForm] = useState({
     nombre: "",
     direccion: "",
-    telefono: "",
-    email: "",
+    telefono: "", //SE AGREGARON LOS CAMPOS DE LOS USUARIOS
+    email: "", 
   });
 
   // 🔹 Cargar datos guardados
