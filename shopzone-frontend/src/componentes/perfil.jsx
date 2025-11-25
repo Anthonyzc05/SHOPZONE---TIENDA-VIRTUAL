@@ -6,7 +6,7 @@ function Perfil({ onClose }) {
     nombre: "",
     direccion: "",
     telefono: "",
-    email: "",
+    email: "",  //DATOS DEL USUARIO
   });
 
   // 🔹 Cargar datos guardados
