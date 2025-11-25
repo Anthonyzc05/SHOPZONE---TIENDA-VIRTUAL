@@ -13,7 +13,7 @@ function Perfil({ onClose }) {
   useEffect(() => {
     const datosGuardados = localStorage.getItem("perfilUsuario");
     if (datosGuardados) {
-      setForm(JSON.parse(datosGuardados));
+      setForm(JSON.parse(datosGuardados)); // LOS DATOS DE LOS CLIENTES SE GUARDARON CORRECTAMENTE
     }
   }, []);
 
