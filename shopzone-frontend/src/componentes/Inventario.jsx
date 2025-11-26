@@ -16,7 +16,7 @@ const productos = {
     { id: 5, nombre: "Televisor Smart 55''", precio: 2900, imagen: "/images/TelevisorSmart.webp" },
     { id: 6, nombre: "Aspiradora Philips", precio: 700, imagen: "/images/aspiradora.jpg" },
   ],
-
+// Se eligió la ropa de temporada para nuestra tienda virtual
   Ropa: [
     { id: 7, nombre: "Casaca de cuero", precio: 350, imagen: "/images/Casacadecuero.jpg" },
     { id: 8, nombre: "Pantalón jeans", precio: 120, imagen: "/images/Pantalonjeans.jpg" },
@@ -117,46 +117,56 @@ function Inventario() {
       </div>
 
       {/* CARRITO MODAL */}
-      {mostrarCarrito && (
-        <div className="carrito-overlay">
-          <div className="carrito-modal">
-            <h2>🛒 Carrito de Compras</h2>
+{mostrarCarrito && (
+  <div className="carrito-overlay">
+    <div className="carrito-modal">
+      <h2>🛒 Carrito de Compras</h2>
 
-            {carrito.length === 0 ? (
-              <p>Tu carrito está vacío.</p>
-            ) : (
-              carrito.map((item, index) => (
-                <div key={index} className="carrito-item">
-                  <img src={item.imagen} alt={item.nombre} />
+      {carrito.length === 0 ? (
+        <p>Tu carrito está vacío.</p>
+      ) : (
+        carrito.map((item, index) => (
+          <div key={index} className="carrito-item">
+            <img src={item.imagen} alt={item.nombre} />
 
-                  <div className="info">
-                    <p>{item.nombre}</p>
-                    <p>S/. {item.precio}</p>
-                  </div>
+            <div className="info">
+              <p>{item.nombre}</p>
+              <p>S/. {item.precio}</p>
+            </div>
 
-                  <button className="btn-eliminar" onClick={() => eliminarProducto(index)}>
-                    ✖
-                  </button>
-                </div>
-              ))
-            )}
-
-            <button
-              className="btn-proceder"
-              onClick={() => {
-                if (carrito.length === 0) return alert("Carrito vacío");
-                setMostrarPago(true);
-              }}
-            >
-              Proceder al pago
-            </button>
-
-            <button className="btn-cerrar" onClick={() => setMostrarCarrito(false)}>
-              Cerrar
+            <button className="btn-eliminar" onClick={() => eliminarProducto(index)}>
+              ✖
             </button>
           </div>
-        </div>
+        ))
       )}
+
+      <button
+        className="btn-proceder"
+        onClick={() => {
+          if (carrito.length === 0) return alert("Carrito vacío");
+          setMostrarPago(true);
+        }}
+      >
+        Proceder al pago
+      </button>
+
+      <button
+        className="btn-eliminar"
+        onClick={() => setCarrito([])}
+      >
+        Vaciar carrito
+      </button>
+
+      <button
+        className="btn-cerrar"
+        onClick={() => setMostrarCarrito(false)}
+      >
+        Cerrar
+      </button>
+    </div>
+  </div>
+)}
 
       {/* MÉTODO PAGO */}
       {mostrarPago && (
