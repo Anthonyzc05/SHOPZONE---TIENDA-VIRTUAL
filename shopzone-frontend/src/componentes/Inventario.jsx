@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./styles/Inventario.css";
 import { FaCog, FaUser, FaShoppingCart, FaComments, FaSignOutAlt } from "react-icons/fa";
+const [animacionId, setAnimacionId] = useState(null);
 
 
 import MetodoCompra from "./metodocompra";
@@ -46,8 +47,11 @@ function Inventario() {
   const [mostrarPerfil, setMostrarPerfil] = useState(false);
 
   const agregarCarrito = (producto) => {
-    setCarrito([...carrito, producto]);
-  };
+  setCarrito([...carrito, producto]);
+
+  setAnimacionId(producto.id);
+  setTimeout(() => setAnimacionId(null), 300);
+};
 
   const eliminarProducto = (index) => {
     const nuevoCarrito = carrito.filter((_, i) => i !== index);
@@ -107,7 +111,10 @@ function Inventario() {
       {/* PRODUCTOS */}
       <div className="productos-grid">
         {productos[categoriaActiva].map((prod) => (
-          <div key={prod.id} className="producto-card">
+          <div
+            key={prod.id}
+            className={`producto-card ${animacionId === prod.id ? "animar" : ""}`}
+            >
             <img src={prod.imagen} alt={prod.nombre} />
             <h3>{prod.nombre}</h3>
             <p>S/. {prod.precio}</p>
