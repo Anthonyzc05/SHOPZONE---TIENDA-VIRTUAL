@@ -35,7 +35,7 @@ function Login({ onLoginSuccess }) {
   //  login 
   const login = async () => {
     if (!email || !password) {
-      alert("Completa todos los campos");
+      alert("Completa todos los campos obligatoriamente"); // alertas 
       return;
     }
 
@@ -51,10 +51,10 @@ function Login({ onLoginSuccess }) {
   
 
       if (mensaje.includes("exitoso")) {
-        alert("Bienvenido " + email);
+        alert("Bienvenido a shopzone estimado" + email);
         onLoginSuccess(email);
       } else {
-        alert(" Credenciales incorrectas");
+        alert(" Credenciales incorrectas, intentalo de nuevo");
       }
     } catch (err) {
       alert("Error de conexión con el servidor");
