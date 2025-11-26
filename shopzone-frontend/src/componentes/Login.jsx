@@ -9,7 +9,7 @@ function Login({ onLoginSuccess }) {
   // REGISTRO
   const registrar = async () => {
     if (!email || !password) {
-      alert("Completa todos los campos");
+      alert("Completa todos los campos obligatoriamente");  // agregamos las alertas como condicion
       return;
     }
 
@@ -32,7 +32,7 @@ function Login({ onLoginSuccess }) {
     }
   };
 
-  //  CORREGIDO
+  //  login 
   const login = async () => {
     if (!email || !password) {
       alert("Completa todos los campos");
@@ -48,9 +48,7 @@ function Login({ onLoginSuccess }) {
 
       const mensaje = await res.text();
 
-      // BACKEND DEVUELVE:
-      // - "Incorrecto"  NO ENTRA
-      // - "Correcto"  ENTRA
+  
 
       if (mensaje.includes("exitoso")) {
         alert("Bienvenido " + email);
