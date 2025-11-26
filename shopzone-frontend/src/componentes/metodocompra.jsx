@@ -37,16 +37,19 @@ function MetodoCompra({ onConfirm }) {
           name="tarjeta"
           placeholder="Número de tarjeta"
           onChange={handleChange}
+          maxLength={16}
         />
         <input
           name="fecha"
           placeholder="MM/AA"
           onChange={handleChange}
+          maxLength={5}
         />
         <input
           name="cvv"
           placeholder="CVV"
           onChange={handleChange}
+          maxLength={4}
         />
 
         <button className="btn-comprar" onClick={confirmar}>
