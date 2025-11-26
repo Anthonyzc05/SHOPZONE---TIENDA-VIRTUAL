@@ -3,7 +3,7 @@ import "./styles/administracion.css";
 
 function Administracion({ onClose }) {
   const [mensajes, setMensajes] = useState([
-    { de: "Soporte", texto: "Hola 👋 ¿En qué puedo ayudarte?" }
+    { de: "Soporte", texto: "Hola ¿En qué puedo ayudarte con tu pedido ?" } // mensaje estatico 
   ]);
   const [texto, setTexto] = useState("");
 
@@ -19,7 +19,7 @@ function Administracion({ onClose }) {
         ...prev,
         {
           de: "Soporte",
-          texto: "Tu pedido llegará hoy entre 3:00 pm y 4:00 pm 🚚"
+          texto: "Tu pedido llegará hoy entre 3:00 pm y 4:00 pm 🚚... "  // mensaje automatico despues de enviar el cliente
         }
       ]);
     }, 1000);
