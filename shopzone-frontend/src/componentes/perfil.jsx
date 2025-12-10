@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "./styles/perfil.css";
+import { useTranslation } from "react-i18next";
 
 function Perfil({ onClose }) {
+  const { t } = useTranslation();
+
   const [form, setForm] = useState({
     nombre: "",
     direccion: "",
@@ -20,7 +23,7 @@ function Perfil({ onClose }) {
   // 🔹 Guardar cambios
   const guardarCambios = () => {
     localStorage.setItem("perfilUsuario", JSON.stringify(form));
-    alert("Datos guardados correctamente ✔");
+    alert(t("perfil.guardado"));
   };
 
   // 🔹 Actualizar inputs
@@ -31,48 +34,47 @@ function Perfil({ onClose }) {
   return (
     <div className="perfil-overlay">
       <div className="perfil-modal">
-        <h2>Mi Perfil</h2>
+        <h2>{t("perfil.title")}</h2>
 
-        <label>Nombre</label>
+        <label>{t("perfil.nombre")}</label>
         <input
           name="nombre"
           value={form.nombre}
           onChange={handleChange}
-          placeholder="Tu nombre"
+          placeholder={t("perfil.nombrePlaceholder")}
         />
 
-        <label>Dirección</label>
+        <label>{t("perfil.direccion")}</label>
         <input
           name="direccion"
           value={form.direccion}
           onChange={handleChange}
-          placeholder="Tu dirección"
+          placeholder={t("perfil.direccionPlaceholder")}
         />
 
-        <label>Teléfono</label>
+        <label>{t("perfil.telefono")}</label>
         <input
           name="telefono"
           value={form.telefono}
           onChange={handleChange}
-          placeholder="Tu teléfono"
+          placeholder={t("perfil.telefonoPlaceholder")}
         />
 
-        <label>Email</label>
+        <label>{t("perfil.email")}</label>
         <input
           name="email"
           value={form.email}
           onChange={handleChange}
-          placeholder="Tu correo"
+          placeholder={t("perfil.emailPlaceholder")}
         />
 
         <div className="perfil-botones">
           <button className="btn-guardar" onClick={guardarCambios}>
-            Guardar
+            {t("perfil.guardar")}
           </button>
 
-          {/* 🔹 Botón regresar que sí funciona */}
           <button className="btn-regresar" onClick={onClose}>
-            Regresar
+            {t("perfil.regresar")}
           </button>
         </div>
       </div>

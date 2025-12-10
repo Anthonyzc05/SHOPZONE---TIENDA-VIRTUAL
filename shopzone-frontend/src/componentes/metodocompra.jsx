@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import "./styles/metodocompra.css";
+import { useTranslation } from "react-i18next";
 
 function MetodoCompra({ onConfirm }) {
+  const { t } = useTranslation();
+
   const [form, setForm] = useState({
     nombre: "",
     tarjeta: "",
     fecha: "",
-    cvv: "",
+    cvv: ""
   });
 
   const handleChange = (e) => {
@@ -15,46 +18,49 @@ function MetodoCompra({ onConfirm }) {
 
   const confirmar = () => {
     if (!form.nombre || !form.tarjeta || !form.fecha || !form.cvv) {
-      alert("Completa todos los campos");
+      alert(t("pago.completalo"));
       return;
     }
 
-    alert("✔ Compra realizada con éxito. ¡Gracias por tu compra!");
+    alert(t("pago.exito"));
     onConfirm();
   };
 
   return (
     <div className="metodo-overlay">
       <div className="metodo-container">
-        <h2>Método de Pago</h2>
+        <h2>{t("pago.title")}</h2>
 
         <input
           name="nombre"
-          placeholder="Nombre en la tarjeta"
+          placeholder={t("pago.nombre")}
           onChange={handleChange}
         />
+
         <input
           name="tarjeta"
-          placeholder="Número de tarjeta"
+          placeholder={t("pago.tarjeta")}
           onChange={handleChange}
         />
+
         <input
           name="fecha"
-          placeholder="MM/AA"
+          placeholder={t("pago.fecha")}
           onChange={handleChange}
         />
+
         <input
           name="cvv"
-          placeholder="CVV"
+          placeholder={t("pago.cvv")}
           onChange={handleChange}
         />
 
         <button className="btn-comprar" onClick={confirmar}>
-          Confirmar Compra
+          {t("pago.confirmar")}
         </button>
 
         <button className="btn-cerrar" onClick={onConfirm}>
-          Cancelar
+          {t("pago.cancelar")}
         </button>
       </div>
     </div>
@@ -62,3 +68,4 @@ function MetodoCompra({ onConfirm }) {
 }
 
 export default MetodoCompra;
+

@@ -1,0 +1,128 @@
+{
+  "currency_symbol": "S/",
+
+  "login_title": "Inicia Sesión",
+  "register_title": "Regístrate",
+  "email": "Correo electrónico",
+  "password": "Contraseña",
+  "login_button": "Iniciar Sesión",
+  "register_button": "Registrar",
+  "no_account": "¿No tienes cuenta?",
+  "register_here": "Regístrate aquí",
+  "have_account": "¿Ya tienes cuenta?",
+  "login_here": "Inicia sesión aquí",
+  "fill_all_fields": "Completa todos los campos",
+  "cannot_register": "No se pudo registrar",
+  "user_registered": "Usuario registrado correctamente",
+  "server_error": "Error al conectar con el servidor",
+  "invalid_credentials": "Credenciales incorrectas",
+  "welcome": "Bienvenido",
+
+  "admin": {
+    "title": "Administración",
+    "soporte": "Soporte",
+    "tu": "Tú",
+    "mensaje_inicio": "Hola 👋 ¿En qué puedo ayudarte?",
+    "mensaje_auto": "Tu pedido llegará hoy entre 3:00 pm y 4:00 pm 🚚",
+    "placeholder": "Escribe tu mensaje...",
+    "enviar": "Enviar",
+    "cerrar": "Cerrar"
+  },
+
+  "carrito": {
+    "title": "Carrito de Compras",
+    "vacio": "Tu carrito está vacío.",
+    "cerrar": "Cerrar",
+    "pagar": "Proceder al Pago"
+
+  },
+
+  "pago": {
+    "title": "Método de Pago",
+    "nombre": "Nombre en la tarjeta",
+    "tarjeta": "Número de tarjeta",
+    "fecha": "MM/AA",
+    "cvv": "CVV",
+    "confirmar": "Confirmar Compra",
+    "cancelar": "Cancelar",
+    "completalo": "Completa todos los campos",
+    "exito": "✔ Compra realizada con éxito. ¡Gracias por tu compra!"
+  },
+
+  "perfil": {
+    "title": "Mi Perfil",
+    "nombre": "Nombre",
+    "direccion": "Dirección",
+    "telefono": "Teléfono",
+    "email": "Email",
+
+    "nombrePlaceholder": "Tu nombre",
+    "direccionPlaceholder": "Tu dirección",
+    "telefonoPlaceholder": "Tu teléfono",
+    "emailPlaceholder": "Tu correo",
+
+    "guardar": "Guardar",
+    "regresar": "Regresar",
+    "guardado": "Datos guardados correctamente ✔"
+  },
+
+  "inventario": {
+    "titulo": "ShopZone - Inventario",
+
+    "categorias": {
+      "Electrodomésticos": "Electrodomésticos",
+      "Ropa": "Ropa",
+      "Objetos": "Objetos",
+      "Alimentos": "Alimentos"
+    },
+
+    "perfil": "Perfil",
+    "carrito": "Carrito",
+    "admin": "Administración",
+    "cerrarSesion": "Cerrar sesión",
+
+    "agregarCarrito": "Agregar al carrito",
+
+    "carritoTitulo": "🛒 Carrito de Compras",
+    "carritoVacio": "Tu carrito está vacío.",
+    "procederPago": "Proceder al pago",
+    "cerrar": "Cerrar",
+
+    "sesionCerrada": "Sesión cerrada correctamente",
+
+    "productos": {
+      "Refrigeradora Samsung": "Refrigeradora Samsung",
+      "Licuadora Oster": "Licuadora Oster",
+      "Horno microondas LG": "Horno microondas LG",
+      "Cocina Indurama": "Cocina Indurama",
+      "Televisor Smart 55''": "Televisor Smart 55''",
+      "Aspiradora Philips": "Aspiradora Philips",
+
+      "Casaca de cuero": "Casaca de cuero",
+      "Pantalón jeans": "Pantalón jeans",
+      "Polera Adidas": "Polera Adidas",
+      "Camisa blanca": "Camisa blanca",
+      "Zapatillas Nike": "Zapatillas Nike",
+      "Gorro de lana": "Gorro de lana",
+
+      "Reloj de pared": "Reloj de pared",
+      "Jarrón decorativo": "Jarrón decorativo",
+      "Set de cubiertos": "Set de cubiertos",
+      "Cuadro moderno": "Cuadro moderno",
+      "Lámpara de mesa": "Lámpara de mesa",
+      "Portaretratos": "Portaretratos",
+
+      "Cereal": "Cereal",
+      "Jamón": "Jamón",
+      "Manzana": "Manzana",
+      "Pan": "Pan",
+      "Torta": "Torta",
+      "Empanada": "Empanada"
+    }
+  }
+
+
+
+}
+
+

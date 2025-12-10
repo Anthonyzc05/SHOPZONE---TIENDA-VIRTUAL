@@ -1,7 +1,10 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";     // <<< IMPORTANTE
 import "./styles/Login.css";
 
 function Login({ onLoginSuccess }) {
+  const { t } = useTranslation();                  // <<< IMPORTANTE
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [modo, setModo] = useState("login"); // login o registro
@@ -9,7 +12,7 @@ function Login({ onLoginSuccess }) {
   // REGISTRO
   const registrar = async () => {
     if (!email || !password) {
-      alert("Completa todos los campos");
+      alert(t("fill_all_fields"));
       return;
     }
 
@@ -21,21 +24,21 @@ function Login({ onLoginSuccess }) {
       });
 
       if (!res.ok) {
-        alert("No se pudo registrar");
+        alert(t("cannot_register"));
         return;
       }
 
-      alert("Usuario registrado correctamente");
+      alert(t("user_registered"));
       setModo("login");
     } catch (err) {
-      alert("Error al conectar con el servidor");
+      alert(t("server_error"));
     }
   };
 
-  //  CORREGIDO
+  // LOGIN
   const login = async () => {
     if (!email || !password) {
-      alert("Completa todos los campos");
+      alert(t("fill_all_fields"));
       return;
     }
 
@@ -48,18 +51,14 @@ function Login({ onLoginSuccess }) {
 
       const mensaje = await res.text();
 
-      // BACKEND DEVUELVE:
-      // - "Incorrecto"  NO ENTRA
-      // - "Correcto"  ENTRA
-
       if (mensaje.includes("exitoso")) {
-        alert("Bienvenido " + email);
+        alert(t("welcome") + " " + email);
         onLoginSuccess(email);
       } else {
-        alert(" Credenciales incorrectas");
+        alert(t("invalid_credentials"));
       }
     } catch (err) {
-      alert("Error de conexión con el servidor");
+      alert(t("server_error"));
     }
   };
 
@@ -67,36 +66,42 @@ function Login({ onLoginSuccess }) {
     <div className="login-container">
       <div className="login-blur-bg"></div>
       <div className="login-box">
-        <h2>{modo === "login" ? "Inicia Sesión" : "Regístrate"}</h2>
+        <h2>
+          {modo === "login" ? t("login_title") : t("register_title")}
+        </h2>
 
         <input
           type="text"
-          placeholder="Correo electrónico"
+          placeholder={t("email")}
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
 
         <input
           type="password"
-          placeholder="Contraseña"
+          placeholder={t("password")}
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
 
         {modo === "login" ? (
           <>
-            <button onClick={login}>Iniciar Sesión</button>
+            <button onClick={login}>{t("login_button")}</button>
             <p>
-              ¿No tienes cuenta?{" "}
-              <span onClick={() => setModo("registro")}>Regístrate aquí</span>
+              {t("no_account")}{" "}
+              <span onClick={() => setModo("registro")}>
+                {t("register_here")}
+              </span>
             </p>
           </>
         ) : (
           <>
-            <button onClick={registrar}>Registrar</button>
+            <button onClick={registrar}>{t("register_button")}</button>
             <p>
-              ¿Ya tienes cuenta?{" "}
-              <span onClick={() => setModo("login")}>Inicia sesión aquí</span>
+              {t("have_account")}{" "}
+              <span onClick={() => setModo("login")}>
+                {t("login_here")}
+              </span>
             </p>
           </>
         )}
@@ -106,4 +111,3 @@ function Login({ onLoginSuccess }) {
 }
 
 export default Login;
-

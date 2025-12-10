@@ -1,16 +1,20 @@
 import React, { useState } from "react";
 import "./styles/administracion.css";
+import { useTranslation } from "react-i18next";
 
 function Administracion({ onClose }) {
+  const { t } = useTranslation();
+
   const [mensajes, setMensajes] = useState([
-    { de: "Soporte", texto: "Hola 👋 ¿En qué puedo ayudarte?" }
+    { de: t("admin.soporte"), texto: t("admin.mensaje_inicio") }
   ]);
+
   const [texto, setTexto] = useState("");
 
   const enviarMensaje = () => {
     if (!texto.trim()) return;
 
-    setMensajes([...mensajes, { de: "Tú", texto }]);
+    setMensajes([...mensajes, { de: t("admin.tu"), texto }]);
 
     setTexto("");
 
@@ -18,8 +22,8 @@ function Administracion({ onClose }) {
       setMensajes((prev) => [
         ...prev,
         {
-          de: "Soporte",
-          texto: "Tu pedido llegará hoy entre 3:00 pm y 4:00 pm 🚚"
+          de: t("admin.soporte"),
+          texto: t("admin.mensaje_auto")
         }
       ]);
     }, 1000);
@@ -28,11 +32,11 @@ function Administracion({ onClose }) {
   return (
     <div className="admin-overlay">
       <div className="admin-modal">
-        <h2>📦 Administración</h2>
+        <h2>📦 {t("admin.title")}</h2>
 
         <div className="chat-box">
           {mensajes.map((m, i) => (
-            <p key={i} className={m.de === "Tú" ? "yo" : "ellos"}>
+            <p key={i} className={m.de === t("admin.tu") ? "yo" : "ellos"}>
               <strong>{m.de}:</strong> {m.texto}
             </p>
           ))}
@@ -40,13 +44,17 @@ function Administracion({ onClose }) {
 
         <input
           value={texto}
-          placeholder="Escribe tu mensaje..."
+          placeholder={t("admin.placeholder")}
           onChange={(e) => setTexto(e.target.value)}
         />
 
-        <button className="btn-enviar" onClick={enviarMensaje}>Enviar</button>
+        <button className="btn-enviar" onClick={enviarMensaje}>
+          {t("admin.enviar")}
+        </button>
 
-        <button className="btn-cerrar" onClick={onClose}>Cerrar</button>
+        <button className="btn-cerrar" onClick={onClose}>
+          {t("admin.cerrar")}
+        </button>
       </div>
     </div>
   );

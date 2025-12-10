@@ -1,0 +1,123 @@
+{
+  "currency_symbol": "$",
+
+  "login_title": "Login",
+  "register_title": "Register",
+  "email": "Email",
+  "password": "Password",
+  "login_button": "Login",
+  "register_button": "Register",
+  "no_account": "Don't have an account?",
+  "register_here": "Register here",
+  "have_account": "Already have an account?",
+  "login_here": "Log in here",
+  "fill_all_fields": "Fill in all fields",
+  "cannot_register": "Could not register",
+  "user_registered": "User registered successfully",
+  "server_error": "Server connection error",
+  "invalid_credentials": "Incorrect credentials",
+  "welcome": "Welcome",
+
+  "admin": {
+    "title": "Administration",
+    "soporte": "Support",
+    "tu": "You",
+    "mensaje_inicio": "Hello 👋 How can I help you?",
+    "mensaje_auto": "Your order will arrive today between 3:00 pm and 4:00 pm 🚚",
+    "placeholder": "Type your message...",
+    "enviar": "Send",
+    "cerrar": "Close"
+  },
+
+  "carrito": {
+    "title": "Shopping Cart",
+    "vacio": "Your cart is empty.",
+    "cerrar": "Close",
+    "pagar": "Proceed to Payment"
+  },
+
+  "pago": {
+    "title": "Payment Method",
+    "nombre": "Cardholder name",
+    "tarjeta": "Card number",
+    "fecha": "MM/YY",
+    "cvv": "CVV",
+    "confirmar": "Confirm Purchase",
+    "cancelar": "Cancel",
+    "completalo": "Fill all fields",
+    "exito": "✔ Purchase completed successfully. Thank you!"
+  },
+
+  "perfil": {
+    "title": "My Profile",
+    "nombre": "Name",
+    "direccion": "Address",
+    "telefono": "Phone",
+    "email": "Email",
+
+    "nombrePlaceholder": "Your name",
+    "direccionPlaceholder": "Your address",
+    "telefonoPlaceholder": "Your phone",
+    "emailPlaceholder": "Your email",
+
+    "guardar": "Save",
+    "regresar": "Back",
+    "guardado": "Data saved successfully ✔"
+  },
+
+  "inventario": {
+    "titulo": "ShopZone - Inventory",
+
+    "categorias": {
+      "Electrodomésticos": "Appliances",
+      "Ropa": "Clothing",
+      "Objetos": "Objects",
+      "Alimentos": "Food"
+    },
+
+    "perfil": "Profile",
+    "carrito": "Cart",
+    "admin": "Support",
+    "cerrarSesion": "Log out",
+
+    "agregarCarrito": "Add to cart",
+
+    "carritoTitulo": "🛒 Shopping Cart",
+    "carritoVacio": "Your cart is empty.",
+    "procederPago": "Proceed to payment",
+    "cerrar": "Close",
+
+    "sesionCerrada": "Session closed successfully",
+
+    "productos": {
+      "Refrigeradora Samsung": "Samsung Refrigerator",
+      "Licuadora Oster": "Oster Blender",
+      "Horno microondas LG": "LG Microwave Oven",
+      "Cocina Indurama": "Indurama Stove",
+      "Televisor Smart 55''": "55'' Smart TV",
+      "Aspiradora Philips": "Philips Vacuum Cleaner",
+
+      "Casaca de cuero": "Leather Jacket",
+      "Pantalón jeans": "Jeans",
+      "Polera Adidas": "Adidas Hoodie",
+      "Camisa blanca": "White Shirt",
+      "Zapatillas Nike": "Nike Shoes",
+      "Gorro de lana": "Wool Hat",
+
+      "Reloj de pared": "Wall Clock",
+      "Jarrón decorativo": "Decorative Vase",
+      "Set de cubiertos": "Cutlery Set",
+      "Cuadro moderno": "Modern Painting",
+      "Lámpara de mesa": "Table Lamp",
+      "Portaretratos": "Photo Frame",
+
+      "Cereal": "Cereal",
+      "Jamón": "Ham",
+      "Manzana": "Apple",
+      "Pan": "Bread",
+      "Torta": "Cake",
+      "Empanada": "Empanada"
+    }
+  }
+
+}
