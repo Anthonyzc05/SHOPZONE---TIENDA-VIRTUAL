@@ -14,7 +14,7 @@ public class UsuarioController {
     @Autowired
     private UsuarioRepository usuarioRepository;
 
-    // 🟢 Registrar usuario
+    //  Registrar usuario
     @PostMapping("/register")
     public ResponseEntity<?> registrarUsuario(@RequestBody Usuario usuario) {
         Usuario existente = usuarioRepository.findByEmail(usuario.getEmail());
@@ -27,7 +27,7 @@ public class UsuarioController {
         return ResponseEntity.ok("Usuario registrado correctamente");
     }
 
-    // 🟡 Iniciar sesión con validación correcta
+    //  Iniciar sesión con validación correcta
     @PostMapping("/login")
     public ResponseEntity<?> loginUsuario(@RequestBody Usuario usuario) {
         Usuario user = usuarioRepository.findByEmail(usuario.getEmail());

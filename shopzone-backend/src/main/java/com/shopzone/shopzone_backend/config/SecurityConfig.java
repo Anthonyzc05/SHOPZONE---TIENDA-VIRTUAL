@@ -13,7 +13,7 @@ public class SecurityConfig {
         http
                 .csrf(csrf -> csrf.disable()) // Desactiva protección CSRF
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/**").permitAll() // Permite acceso a tus endpoints
+                        .requestMatchers("/","/api/**").permitAll() // Permite acceso a tus endpoints
                         .anyRequest().authenticated() // El resto requiere autenticación
                 )
                 .formLogin(login -> login.disable()) // Desactiva el formulario de login de Spring
