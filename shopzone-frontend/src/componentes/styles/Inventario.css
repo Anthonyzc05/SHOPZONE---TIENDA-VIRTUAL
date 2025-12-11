@@ -87,6 +87,11 @@
   text-align: center;
   transition: transform 0.3s ease;
 }
+/* ANIMACIÓN DE AGREGADO AL CARRITO */
+.producto-card.animar {
+  transform: scale(1.12);
+  box-shadow: 0 0 15px rgba(0, 123, 255, 0.5);
+}
 
 .producto-card:hover {
   transform: scale(1.05);

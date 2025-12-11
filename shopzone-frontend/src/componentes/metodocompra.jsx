@@ -41,18 +41,21 @@ function MetodoCompra({ onConfirm }) {
           name="tarjeta"
           placeholder={t("pago.tarjeta")}
           onChange={handleChange}
+          maxLength={16}
         />
 
         <input
           name="fecha"
           placeholder={t("pago.fecha")}
           onChange={handleChange}
+          maxLength={5}
         />
 
         <input
           name="cvv"
           placeholder={t("pago.cvv")}
           onChange={handleChange}
+          maxLength={4}
         />
 
         <button className="btn-comprar" onClick={confirmar}>

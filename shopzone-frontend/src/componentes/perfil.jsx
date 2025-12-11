@@ -12,7 +12,7 @@ function Perfil({ onClose }) {
     email: "",
   });
 
-  // 🔹 Cargar datos guardados
+  // Cargar datos guardados en localStorage
   useEffect(() => {
     const datosGuardados = localStorage.getItem("perfilUsuario");
     if (datosGuardados) {
@@ -20,13 +20,13 @@ function Perfil({ onClose }) {
     }
   }, []);
 
-  // 🔹 Guardar cambios
+  // Guardar cambios
   const guardarCambios = () => {
     localStorage.setItem("perfilUsuario", JSON.stringify(form));
     alert(t("perfil.guardado"));
   };
 
-  // 🔹 Actualizar inputs
+  // Actualizar inputs
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
@@ -36,6 +36,7 @@ function Perfil({ onClose }) {
       <div className="perfil-modal">
         <h2>{t("perfil.title")}</h2>
 
+        {/* NOMBRE */}
         <label>{t("perfil.nombre")}</label>
         <input
           name="nombre"
@@ -44,6 +45,7 @@ function Perfil({ onClose }) {
           placeholder={t("perfil.nombrePlaceholder")}
         />
 
+        {/* DIRECCIÓN */}
         <label>{t("perfil.direccion")}</label>
         <input
           name="direccion"
@@ -52,6 +54,7 @@ function Perfil({ onClose }) {
           placeholder={t("perfil.direccionPlaceholder")}
         />
 
+        {/* TELÉFONO */}
         <label>{t("perfil.telefono")}</label>
         <input
           name="telefono"
@@ -60,6 +63,7 @@ function Perfil({ onClose }) {
           placeholder={t("perfil.telefonoPlaceholder")}
         />
 
+        {/* EMAIL */}
         <label>{t("perfil.email")}</label>
         <input
           name="email"
@@ -68,6 +72,7 @@ function Perfil({ onClose }) {
           placeholder={t("perfil.emailPlaceholder")}
         />
 
+        {/* BOTONES */}
         <div className="perfil-botones">
           <button className="btn-guardar" onClick={guardarCambios}>
             {t("perfil.guardar")}
@@ -83,3 +88,4 @@ function Perfil({ onClose }) {
 }
 
 export default Perfil;
+

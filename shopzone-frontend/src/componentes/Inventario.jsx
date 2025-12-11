@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./styles/Inventario.css";
+
 import {
   FaCog,
   FaUser,
@@ -62,9 +63,13 @@ function Inventario() {
   const [mostrarPago, setMostrarPago] = useState(false);
   const [mostrarAdmin, setMostrarAdmin] = useState(false);
   const [mostrarPerfil, setMostrarPerfil] = useState(false);
+  const [animacionId, setAnimacionId] = useState(null);
 
   const agregarCarrito = (producto) => {
     setCarrito([...carrito, producto]);
+
+    setAnimacionId(producto.id);
+    setTimeout(() => setAnimacionId(null), 300);
   };
 
   const eliminarProducto = (index) => {
@@ -123,7 +128,10 @@ function Inventario() {
       {/* PRODUCTOS */}
       <div className="productos-grid">
         {productos[categoriaActiva].map((prod) => (
-          <div key={prod.id} className="producto-card">
+          <div
+            key={prod.id}
+            className={`producto-card ${animacionId === prod.id ? "animar" : ""}`}
+          >
             <img src={prod.imagen} alt={prod.nombre} />
             <h3>{t(`inventario.productos.${prod.nombre}`)}</h3>
             <p>{moneda} {prod.precio}</p>
@@ -150,7 +158,7 @@ function Inventario() {
 
                   <div className="info">
                     <p>{t(`inventario.productos.${item.nombre}`)}</p>
-                    <p>S/. {item.precio}</p>
+                    <p>{moneda} {item.precio}</p>
                   </div>
 
                   <button className="btn-eliminar" onClick={() => eliminarProducto(index)}>
